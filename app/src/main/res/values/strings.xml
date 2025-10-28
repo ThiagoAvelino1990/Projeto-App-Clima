@@ -1,3 +1,8 @@
 <resources>
+    <!-- Nome do app -->
     <string name="app_name">AppClimaHoje</string>
+    <string name="app_name_social">Clima Hoje</string>
+
+    <!-- Versão do aplicativo -->
+    <string name="versao_do_app">Versão 0.0.0</string>
 </resources>

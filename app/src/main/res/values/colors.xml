@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Cor de fundo da splashActivity-->
+    <color name="bgColorApp">#4F5D73</color>
+
+    <!-- Cor das letras da splashActivity -->
+    <color name="textColorSplash">#eec04e</color>
 </resources>

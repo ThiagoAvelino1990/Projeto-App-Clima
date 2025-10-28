@@ -18,3 +18,6 @@ Olá, este repositório é destinado ao um pequeno projeto que estou desenvolven
 - Java
 - AndroiStudio
 ----------------------------------------------------------------------
+
+### Site utilizado para busca dos ícones
+- https://www.svgrepo.com/vectors/rain/
