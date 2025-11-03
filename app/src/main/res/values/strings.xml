@@ -5,4 +5,19 @@
 
     <!-- Versão do aplicativo -->
     <string name="versao_do_app">Versão 0.0.0</string>
+
+
+    <!-- TextView e EditText Tela de Cadastro -->
+    <string name="cadastroTxtView">Cadastro</string>
+    <string name="cadastroNomeTxt">Nome</string>
+    <string name="cadastroEmailTxt">Email</string>
+    <string name="cadastroSenhaTxt">Senha</string>
+    <string name="cadastroConfirmarSenhaTxt">Confirmar senha</string>
+    <string name="cadastroLembrarSenhaCHK">Lembrar senha</string>
+
+    <!-- TextView e EditText Tela de Login -->
+    <string name="LoginTxtView">Login</string>
+    <string name="loginEditTxt">usuario</string>
+    <string name="loginSenhaEditTxt">senha</string>
+    <string name="loginLembrarSenhaCHK">Lembrar senha</string>
 </resources>

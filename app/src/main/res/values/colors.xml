@@ -8,4 +8,7 @@
 
     <!-- Cor das letras da splashActivity -->
     <color name="textColorSplash">#eec04e</color>
+
+    <!-- Cor da Sombra -->
+    <color name="shadowColor">#262626</color>
 </resources>
