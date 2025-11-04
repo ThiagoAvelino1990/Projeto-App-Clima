@@ -9,10 +9,10 @@
 
     <!-- TextView e EditText Tela de Cadastro -->
     <string name="cadastroTxtView">Cadastro</string>
-    <string name="cadastroNomeTxt">Nome</string>
-    <string name="cadastroEmailTxt">Email</string>
-    <string name="cadastroSenhaTxt">Senha</string>
-    <string name="cadastroConfirmarSenhaTxt">Confirmar senha</string>
+    <string name="cadastroNomeEditTxt">Nome</string>
+    <string name="cadastroEmailEditTxt">Email</string>
+    <string name="cadastroSenhaEditTxt">Senha</string>
+    <string name="cadastroConfirmarSenhaEditTxt">Confirmar senha</string>
     <string name="cadastroLembrarSenhaCHK">Lembrar senha</string>
 
     <!-- TextView e EditText Tela de Login -->

@@ -32,35 +32,74 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtLogin"
+                    android:id="@+id/txtCadastro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:gravity="center"
-                    android:text="@string/LoginTxtView"
+                    android:text="@string/cadastroTxtView"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="8dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editLoginEmail"
+                    android:id="@+id/editCadastroNome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:hint="@string/loginEditTxt"
+                    android:hint="@string/cadastroNomeEditTxt"
                     android:inputType="textEmailAddress"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/editLoginSenha"
+                    android:id="@+id/editCadastroEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:hint="@string/senhaEditTxt"
+                    android:hint="@string/cadastroEmailEditTxt"
+                    android:inputType="textEmailAddress"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editCadastroSenha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/cadastroSenhaEditTxt"
+                    android:inputType="textPassword"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editCadastroConfirmarSenha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/cadastroConfirmarSenhaEditTxt"
                     android:inputType="textPassword"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -71,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="@string/lembrarSenhaCHK" />
+                    android:text="@string/cadastroLembrarSenhaCHK" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.cardview.widget.CardView>
 
@@ -86,21 +125,5 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:src="@tools:sample/avatars" />
 
-        <TextView
-            android:id="@+id/txtVersao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:shadowColor="@color/shadowColor"
-            android:shadowDx="4"
-            android:shadowDy="8"
-            android:shadowRadius="2"
-            android:text="@string/versao_do_app"
-            android:textColor="@color/textColorSplash"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgAppCliente" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </FrameLayout>
