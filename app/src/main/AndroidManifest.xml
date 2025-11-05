@@ -16,6 +16,9 @@
             android:name=".view.LoginActivity"
             android:exported="false"/>
         <activity
+            android:name=".view.CadastroActivity"
+            android:exported="false"/>
+        <activity
             android:name=".view.MainActivity"
             android:exported="false"/>
         <activity

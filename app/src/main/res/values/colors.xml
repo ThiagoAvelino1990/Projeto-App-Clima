@@ -6,6 +6,12 @@
     <!-- Cor de fundo da splashActivity-->
     <color name="bgColorApp">#4F5D73</color>
 
+    <!-- Cor de fundo botão -->
+    <color name="bgColorBtn">#30384B</color>
+
+    <!-- Cor de fundo Card -->
+    <color name="bgColorCard">#CED3D7</color>
+
     <!-- Cor das letras da splashActivity -->
     <color name="textColorSplash">#eec04e</color>
 

@@ -1,19 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/bgColorApp"
+    android:padding="24dp"
     tools:context=".view.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/txtTitulo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Main Activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/clima_atual"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:shadowColor="#80000000"
+        android:shadowRadius="6"
+        android:layout_marginBottom="12dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/txtCidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="São Paulo"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/txtHoraAtualizacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Atualizado às 14:32"
+        android:textSize="14sp"
+        android:textColor="#CCCCCC"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <ImageView
+        android:id="@+id/imgClima"
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:id="@+id/txtTemperatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="27°C"
+        android:textSize="64sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/txtSensacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sensação: 29°C"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtCondicao"
+            android:text="Céu limpo"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+        <TextView
+            android:id="@+id/txtVento"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Vento: 12 km/h"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/txtUmidade"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Umidade: 64%"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edtBusca"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="@string/buscar_localidade"
+        android:backgroundTint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:textColorHint="#CCCCCC"
+        android:layout_marginTop="24dp"/>
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/bgColorBtn"
+        android:text="@string/buscar" />
+
+</LinearLayout>

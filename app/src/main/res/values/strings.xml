@@ -20,4 +20,7 @@
     <string name="loginEditTxt">usuario</string>
     <string name="loginSenhaEditTxt">senha</string>
     <string name="loginLembrarSenhaCHK">Lembrar senha</string>
+    <string name="clima_atual">Clima Atual</string>
+    <string name="buscar_localidade">Buscar localidade...</string>
+    <string name="buscar">BUSCAR</string>
 </resources>
