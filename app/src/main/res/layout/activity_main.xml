@@ -96,7 +96,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/edtBusca"
+        android:id="@+id/editBusca"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:hint="@string/buscar_localidade"
