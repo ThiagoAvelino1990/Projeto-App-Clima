@@ -14,6 +14,8 @@
     <string name="cadastroSenhaEditTxt">Senha</string>
     <string name="cadastroConfirmarSenhaEditTxt">Confirmar senha</string>
     <string name="cadastroLembrarSenhaCHK">Lembrar senha</string>
+    <string name="btnCadastar">Cadastrar</string>
+    <string name="btnVoltar">Voltar</string>
 
     <!-- TextView e EditText Tela de Login -->
     <string name="LoginTxtView">Login</string>
@@ -23,4 +25,5 @@
     <string name="clima_atual">Clima Atual</string>
     <string name="buscar_localidade">Buscar localidade...</string>
     <string name="buscar">BUSCAR</string>
+
 </resources>

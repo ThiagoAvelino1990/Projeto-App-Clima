@@ -23,9 +23,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/bgColorCard"
             app:cardCornerRadius="4dp"
-            app:cardElevation="8dp"
-            app:cardBackgroundColor="@color/bgColorCard">
+            app:cardElevation="8dp">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -49,9 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/bgColorCard"
             app:cardCornerRadius="4dp"
-            app:cardElevation="8dp"
-            app:cardBackgroundColor="@color/bgColorCard">
+            app:cardElevation="8dp">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -113,6 +113,26 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:text="@string/cadastroLembrarSenhaCHK" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnCadastro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btnCadastar"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnVoltar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btnVoltar"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.cardview.widget.CardView>
 
@@ -122,9 +142,6 @@
             android:layout_height="240dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_launcher_foreground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             tools:src="@tools:sample/avatars" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

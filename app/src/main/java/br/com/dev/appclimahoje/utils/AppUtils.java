@@ -33,7 +33,7 @@ public class AppUtils {
      * Função para validar se senha digitada corresponde com a senha cadastrada
      * @return
      */
-    public boolean validaSenhaCadastro(String senha, String confirmarSenha){
+    public static boolean validaSenhaCadastro(String senha, String confirmarSenha){
         //Verifica se a senha está nula
         if (senha.isEmpty()){
             return false;
@@ -52,7 +52,7 @@ public class AppUtils {
      * Método para validar se a senha digitada no Login é válida
      * @return
      */
-    public boolean validaSenhaLogin(String senhaInformada){
+    public static boolean validaSenhaLogin(String senhaInformada){
         pref = context.getSharedPreferences(PREF,Context.MODE_PRIVATE);
 
         if(pref.getString("senha",null).equals(senhaInformada)){
@@ -67,7 +67,7 @@ public class AppUtils {
      * Função criada para validação de Email
      * @return
      */
-    public boolean validaEmail(String emailInformado){
+    public static boolean validaEmail(String emailInformado){
 
         if (emailInformado.isEmpty()){
             return false;
@@ -83,7 +83,7 @@ public class AppUtils {
      * @param contexto
      * @param mensagem
      */
-    public void retornaMensagem(Context contexto, String mensagem, char tipoMensagem){
+    public static void retornaMensagem(Context contexto, String mensagem, char tipoMensagem){
 
         /**
          * E -> ERRO
