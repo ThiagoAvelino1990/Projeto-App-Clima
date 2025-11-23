@@ -2,7 +2,7 @@
 
 ## Projeto-App-Clima
 
-Olá, este repositório é destinado ao um pequeno projeto que estou desenvolvendo, um app relacionado ao clima que será informado ao usuário de acordo com a sua localização. Para a criaçaõ de tal app, estarei utilizando a linguagem  **Java** no **Android Studio**!
+Olá, este repositório é destinado ao um pequeno projeto que estou desenvolvendo, um app relacionado ao clima que será informado ao usuário de acordo com a sua localização. Para a criação de tal app, estarei utilizando a linguagem  **Java** com o programa **Android Studio**!
 
 
 ---
