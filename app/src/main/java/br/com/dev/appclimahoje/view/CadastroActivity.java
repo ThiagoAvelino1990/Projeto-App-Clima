@@ -1,5 +1,6 @@
 package br.com.dev.appclimahoje.view;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,7 @@ public class CadastroActivity extends AppCompatActivity {
     Button btnCadastro;
     Button btnVoltar;
 
-    public SharedPreferences cadastroPref;
+    public SharedPreferences cadastroPrefs;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class CadastroActivity extends AppCompatActivity {
         gravaDados();
 
         /**
-         * Botões
+         * Desenvolvimento dos Botões
          */
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +53,11 @@ public class CadastroActivity extends AppCompatActivity {
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Desenvolver Voltar para a Tela de Login. Utilizar Intent
+                Intent intent;
+
+                intent = new Intent(CadastroActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -67,12 +72,14 @@ public class CadastroActivity extends AppCompatActivity {
         imgAppCliente = findViewById(R.id.imgAppCliente);
         btnCadastro = findViewById(R.id.btnCadastro);
         btnVoltar = findViewById(R.id.btnVoltar);
+
+        cadastroPrefs = getSharedPreferences(AppUtils.PREF,MODE_PRIVATE);
     }
 
     private void gravaDados() {
-        cadastroPref = getSharedPreferences(AppUtils.PREF,MODE_PRIVATE);
-        SharedPreferences.Editor gravarDadosCadastro = cadastroPref.edit();
+        SharedPreferences.Editor gravarDadosCadastro = cadastroPrefs.edit();
         boolean isDadosOK = true;
+
 
         if(editCadastroNome.getText().toString().isEmpty()){
             isDadosOK = false;
@@ -109,7 +116,12 @@ public class CadastroActivity extends AppCompatActivity {
             gravarDadosCadastro.putString("email",editCadastroEmail.getText().toString());
             gravarDadosCadastro.putString("senha",editCadastroSenha.getText().toString());
             gravarDadosCadastro.putString("confirmar_senha",editCadastroConfirmarSenha.getText().toString());
-            gravarDadosCadastro.putBoolean("chk_lembrar_dados",true);
+            // Salver checkBox
+            if(chkLembrarDados.isChecked()){
+                gravarDadosCadastro.putBoolean("chk_lembrar_dados",true);
+            }else{
+                gravarDadosCadastro.putBoolean("chk_lembrar_dados",false);
+            }
         }
 
     }

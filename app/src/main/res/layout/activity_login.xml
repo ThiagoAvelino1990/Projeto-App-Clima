@@ -80,14 +80,16 @@
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnLogin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Login" />
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSair"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Voltar" />
+                        android:text="Sair" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.LinearLayoutCompat>
 

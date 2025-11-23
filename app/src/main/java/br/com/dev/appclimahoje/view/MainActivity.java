@@ -18,6 +18,18 @@ import br.com.dev.appclimahoje.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView txtTitulo;
+    TextView txtCidade;
+    TextView txtHoraAtualizacao;
+    ImageView imgClima;
+    TextView txtTemperatura;
+    TextView txtSensacao;
+    TextView txtCondicao;
+    TextView txtVento;
+    TextView txtUmidade;
+    EditText editBusca;
+    Button btnBuscar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,17 +46,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initComponentes(){
-        TextView txtTitulo = findViewById(R.id.txtTitulo);
-        TextView txtCidade = findViewById(R.id.txtCidade);
-        TextView txtHoraAtualizacao = findViewById(R.id.txtHoraAtualizacao);
-        ImageView imgClima = findViewById(R.id.imgClima);
-        TextView txtTemperatura = findViewById(R.id.txtTemperatura);
-        TextView txtSensacao = findViewById(R.id.txtSensacao);
-        TextView txtCondicao = findViewById(R.id.txtCondicao);
-        TextView txtVento = findViewById(R.id.txtVento);
-        TextView txtUmidade = findViewById(R.id.txtUmidade);
-        EditText editBusca = findViewById(R.id.editBusca);
-        Button btnBuscar = findViewById(R.id.btnBuscar);
+        txtTitulo = findViewById(R.id.txtTitulo);
+        txtCidade = findViewById(R.id.txtCidade);
+        txtHoraAtualizacao = findViewById(R.id.txtHoraAtualizacao);
+        imgClima = findViewById(R.id.imgClima);
+        txtTemperatura = findViewById(R.id.txtTemperatura);
+        txtSensacao = findViewById(R.id.txtSensacao);
+        txtCondicao = findViewById(R.id.txtCondicao);
+        txtVento = findViewById(R.id.txtVento);
+        txtUmidade = findViewById(R.id.txtUmidade);
+        editBusca = findViewById(R.id.editBusca);
+        btnBuscar = findViewById(R.id.btnBuscar);
     }
 
 }

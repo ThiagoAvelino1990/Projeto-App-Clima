@@ -1,6 +1,7 @@
 package br.com.dev.appclimahoje.view;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -15,6 +16,12 @@ import br.com.dev.appclimahoje.utils.AppUtils;
 
 public class SplashActivity extends AppCompatActivity {
 
+    TextView txtAppCliente;
+    ImageView imgAppCliente;
+    TextView txtVersao;
+    SharedPreferences splashPrefs;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -26,9 +33,11 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void initComponentes(){
-        TextView txtAppCliente = findViewById(R.id.txtAppCliente);
-        ImageView imgAppCliente = findViewById(R.id.imgAppCliente);
-        TextView txtVersao = findViewById(R.id.txtVersao);
+        txtAppCliente = findViewById(R.id.txtAppCliente);
+        imgAppCliente = findViewById(R.id.imgAppCliente);
+        txtVersao = findViewById(R.id.txtVersao);
+
+        splashPrefs = getSharedPreferences(AppUtils.PREF,MODE_PRIVATE);
     }
 
     private void inicializarApp() {
@@ -36,11 +45,18 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent;
+                if(splashPrefs.getBoolean("chk_lembrar_dados",false)){
+                    intent = new Intent(SplashActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    AppUtils.retornaMensagem(SplashActivity.this,"Carregando dados",'I');
+                    finish();
+                }else{
+                    intent = new Intent(SplashActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    AppUtils.retornaMensagem(SplashActivity.this,"Carregando dados",'I');
+                    finish();
+                }
 
-                intent = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(intent);
-                Log.i(AppUtils.TAG,"Transição da Tela Splash para a tela de Login");
-                finish();
             }
         }, AppUtils.TIME_SPLASH);
     }
