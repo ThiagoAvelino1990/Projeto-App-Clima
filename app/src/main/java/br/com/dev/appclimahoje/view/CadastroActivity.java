@@ -29,8 +29,6 @@ public class CadastroActivity extends AppCompatActivity {
     Button btnCadastro;
     Button btnVoltar;
 
-    public SharedPreferences cadastroPrefs;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,12 +70,9 @@ public class CadastroActivity extends AppCompatActivity {
         imgAppCliente = findViewById(R.id.imgAppCliente);
         btnCadastro = findViewById(R.id.btnCadastro);
         btnVoltar = findViewById(R.id.btnVoltar);
-
-        cadastroPrefs = getSharedPreferences(AppUtils.PREF,MODE_PRIVATE);
     }
 
     private void gravaDados() {
-        SharedPreferences.Editor gravarDadosCadastro = cadastroPrefs.edit();
         boolean isDadosOK = true;
 
 
@@ -112,15 +107,14 @@ public class CadastroActivity extends AppCompatActivity {
         }
 
         if (isDadosOK){
-            gravarDadosCadastro.putString("nome",editCadastroNome.getText().toString());
-            gravarDadosCadastro.putString("email",editCadastroEmail.getText().toString());
-            gravarDadosCadastro.putString("senha",editCadastroSenha.getText().toString());
-            gravarDadosCadastro.putString("confirmar_senha",editCadastroConfirmarSenha.getText().toString());
-            // Salver checkBox
+            AppUtils.setSharedPrefs("nome",editCadastroNome.getText().toString());
+            AppUtils.setSharedPrefs("email",editCadastroEmail.getText().toString());
+            AppUtils.setSharedPrefs("senha",editCadastroSenha.getText().toString());
+            AppUtils.setSharedPrefs("confirmar_senha",editCadastroConfirmarSenha.getText().toString());
             if(chkLembrarDados.isChecked()){
-                gravarDadosCadastro.putBoolean("chk_lembrar_dados",true);
+                AppUtils.setSharedPrefs("chk_lembrar_dados","1"); //true
             }else{
-                gravarDadosCadastro.putBoolean("chk_lembrar_dados",false);
+                AppUtils.setSharedPrefs("chk_lembrar_dados","0"); //false
             }
         }
 

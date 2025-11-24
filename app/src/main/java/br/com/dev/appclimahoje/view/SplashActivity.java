@@ -19,7 +19,6 @@ public class SplashActivity extends AppCompatActivity {
     TextView txtAppCliente;
     ImageView imgAppCliente;
     TextView txtVersao;
-    SharedPreferences splashPrefs;
 
 
     @Override
@@ -37,7 +36,6 @@ public class SplashActivity extends AppCompatActivity {
         imgAppCliente = findViewById(R.id.imgAppCliente);
         txtVersao = findViewById(R.id.txtVersao);
 
-        splashPrefs = getSharedPreferences(AppUtils.PREF,MODE_PRIVATE);
     }
 
     private void inicializarApp() {
@@ -45,7 +43,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent;
-                if(splashPrefs.getBoolean("chk_lembrar_dados",false)){
+                if(AppUtils.getSharedPrefs("chk_lembrar_dados").equals("0")){
                     intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                     AppUtils.retornaMensagem(SplashActivity.this,"Carregando dados",'I');

@@ -124,4 +124,18 @@ public class AppUtils {
         return dataAtualFormat;
 
     }
+
+    public static String getSharedPrefs(String key){
+        pref = context.getSharedPreferences(PREF,Context.MODE_PRIVATE);
+
+        return pref.getString(key,"");
+    }
+
+    public static void setSharedPrefs(String key, String valor){
+        pref = context.getSharedPreferences(PREF,Context.MODE_PRIVATE);
+        SharedPreferences.Editor SetDados = pref.edit();
+
+        SetDados.putString(key,valor);
+
+    }
 }

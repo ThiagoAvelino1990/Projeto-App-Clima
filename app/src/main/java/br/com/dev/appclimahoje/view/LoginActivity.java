@@ -27,7 +27,6 @@ public class LoginActivity extends AppCompatActivity {
     TextView txtVersao;
     Button btnLogin;
     Button btnSair;
-    SharedPreferences Loginprefs;
 
 
     @Override
@@ -41,18 +40,17 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences.Editor gravarDadosLogin = Loginprefs.edit();
 
                 Boolean isDadosOk = true;
 
-                if(editLoginEmail.getText().toString().isEmpty() || !(Loginprefs.getString("email",null).equals(editLoginEmail.getText().toString()))){
+                if(editLoginEmail.getText().toString().isEmpty() || !(AppUtils.getSharedPrefs("email").equals(editLoginEmail.getText().toString()))){
                     isDadosOk = false;
                    AppUtils.retornaMensagem(LoginActivity.this,"Login não cadastrado",'A');
                    editLoginEmail.setError("*");
                    editLoginEmail.requestFocus();
                 }
 
-                if(editLoginSenha.getText().toString().isEmpty() || !(Loginprefs.getString("senha",null).equals(editLoginSenha.getText().toString()))){
+                if(editLoginSenha.getText().toString().isEmpty() || !(AppUtils.getSharedPrefs("senha").equals(editLoginSenha.getText().toString()))){
                     isDadosOk = false;
                     AppUtils.retornaMensagem(LoginActivity.this,"Senha incorreta",'A');
                     editLoginSenha.setError("*");
@@ -62,9 +60,9 @@ public class LoginActivity extends AppCompatActivity {
                 if(isDadosOk){
                     // Salver checkBox
                     if(chkLembrarSenha.isChecked()){
-                        gravarDadosLogin.putBoolean("chk_lembrar_dados",true);
+                        AppUtils.setSharedPrefs("chk_lembrar_dados","1");
                     }else{
-                        gravarDadosLogin.putBoolean("chk_lembrar_dados",false);
+                        AppUtils.setSharedPrefs("chk_lembrar_dados","0");
                     }
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -103,7 +101,5 @@ public class LoginActivity extends AppCompatActivity {
         txtVersao = findViewById(R.id.txtVersao);
         btnLogin = findViewById(R.id.btnLogin);
         btnSair = findViewById(R.id.btnSair);
-
-        Loginprefs = getSharedPreferences(AppUtils.PREF,MODE_PRIVATE);
     }
 }
