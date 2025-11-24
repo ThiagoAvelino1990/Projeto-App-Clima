@@ -18,6 +18,7 @@ public class AppUtils {
     public static final int TIME_SPLASH = 4 * 1000;
     public static final String PREF = "app_clima_hoje_pref";
     public static final String VERSION = "v1.0.0";
+    public static final int REQUEST_CODE_APP = 2025;
 
     private static final String EMAIL_PADRAO = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
     private static final Pattern padraoAceito = Pattern.compile(EMAIL_PADRAO,Pattern.CASE_INSENSITIVE);
