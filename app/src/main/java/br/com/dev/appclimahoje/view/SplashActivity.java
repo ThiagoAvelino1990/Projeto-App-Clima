@@ -44,20 +44,16 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
-    private void initComponentes(){
+    private void initComponentes() {
         txtAppCliente = findViewById(R.id.txtAppCliente);
         imgAppCliente = findViewById(R.id.imgAppCliente);
         txtVersao = findViewById(R.id.txtVersao);
 
         permissoesNecessarias = new String[]{
-                Manifest.permission.SEND_SMS,
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.INTERNET,
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-                                             };
-
+                Manifest.permission.ACCESS_BACKGROUND_LOCATION
+        };
     }
 
     private void inicializarApp() {
@@ -65,7 +61,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent;
-                if(AppUtils.getSharedPrefs("chk_lembrar_dados").equals("0")){
+                if(AppUtils.getSharedPrefs("chk_lembrar_dados").equals("1")){
                     intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                     AppUtils.retornaMensagem(SplashActivity.this,"Carregando dados",'I');
