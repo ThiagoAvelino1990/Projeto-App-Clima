@@ -1,5 +1,7 @@
 package br.com.dev.appclimahoje.view;
 
+import static br.com.dev.appclimahoje.utils.AppUtils.*;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
@@ -16,25 +18,26 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 
-import org.w3c.dom.Text;
-
 import br.com.dev.appclimahoje.R;
+import br.com.dev.appclimahoje.utils.AppUtils;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView txtTitulo;
-    TextView txtCidade;
-    TextView txtHoraAtualizacao;
-    ImageView imgClima;
-    TextView txtTemperatura;
-    TextView txtSensacao;
-    TextView txtCondicao;
-    TextView txtVento;
-    TextView txtUmidade;
-    EditText editBusca;
-    Button btnBuscar;
+    public TextView txtTitulo;
+    public TextView txtCidade;
+    public TextView txtHoraAtualizacao;
+    public ImageView imgClima;
+    public TextView txtTemperatura;
+    public TextView txtSensacao;
+    public TextView txtCondicao;
+    public TextView txtVento;
+    public TextView txtUmidade;
+    public EditText editBusca;
+    public Button btnBuscar;
 
-    FusedLocationProviderClient localizacao;
+    private static final int LOCATION_REQUEST_CODE = 200;
+
+    public FusedLocationProviderClient localizacao;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -45,23 +48,30 @@ public class MainActivity extends AppCompatActivity {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+
+            /**
+             * Chamada para o método retornar latitude e longitude
+             */
+            AppUtils.solicitarLocalizacao(this, LOCATION_REQUEST_CODE, (lat, lon) -> {
+                if (lat != null) {
+                    //Colocar chamada para webService(Node)
+                    System.out.println("Latitude: " + lat);
+                    System.out.println("Longitude: " + lon);
+                } else {
+                    AppUtils.retornaMensagem(MainActivity.this,"Não foi possível obter a localização",'A');
+                }
+            });
+
             return insets;
+
         });
 
         initComponentes();
 
-        /*localizacao.getLastLocation()
-                .addOnSuccessListener(location -> {
-                    if(location != null){
-                        double lat = location.getLatitude();
-                        double lon = location.getLongitude();
-                        //Log.d("GPS", "Latitude: " + lat + " | Longitude: " + lon);
-                    }
-                });*/
 
     }
 
-    private void initComponentes(){
+    private void initComponentes() {
         txtTitulo = findViewById(R.id.txtTitulo);
         txtCidade = findViewById(R.id.txtCidade);
         txtHoraAtualizacao = findViewById(R.id.txtHoraAtualizacao);
